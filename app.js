@@ -17,6 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/', (res, req) => {
+  req.send('API is running!!')
+});
 // app.use('/api/messages', messageRoutes);
 
 // Test database connection
