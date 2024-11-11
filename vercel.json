@@ -1,16 +1,13 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "sever.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "sever.js"
-      }
-    ]
+  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/server.js" }],
+  "env": {
+    "DB_NAME": "sql12743519",
+    "DB_USER": "sql12743519",
+    "DB_PASSWORD": "TAumDQJzX3",
+    "DB_HOST": "sql12.freemysqlhosting.net",
+    "DB_DIALECT": "mysql",
+    "JWT_SECRET": "REAL-TIME MESSAGING",
+    "NODE_ENV": "development"
   }
-  
+}
