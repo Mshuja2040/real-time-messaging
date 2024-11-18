@@ -6,8 +6,7 @@
   "main": "sever.js",
   "scripts": {
     "start": "node sever.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm install mysql2"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Muhammad Shuja (Mshuja2040)",
   "license": "ISC",
