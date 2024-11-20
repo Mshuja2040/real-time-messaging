@@ -1,12 +1,10 @@
 import http from 'http';
 import { Server } from 'socket.io';
 import app from './app.js';
-import db from './models/index.js'; // Import your Sequelize instance
+import db from './models/index.js';
 import { storeMessage } from './controllers/messageController.js';
 
-
 const PORT = process.env.PORT || 3000;
-
 
 // Create HTTP server
 const server = http.createServer(app);
@@ -14,7 +12,7 @@ const server = http.createServer(app);
 // Set up Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: process.env.FRONTEND_URL || '*',
     methods: ['GET', 'POST']
   }
 });
@@ -33,10 +31,10 @@ io.on('connection', (socket) => {
 });
 
 // Sync database and start server
-db.sequelize.sync({ force: false }) // Set to true only during development to reset DB
+db.sequelize.sync()
   .then(() => {
     server.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
+      console.log(`Server is running on port ${PORT}`);
     });
   })
   .catch(err => {
