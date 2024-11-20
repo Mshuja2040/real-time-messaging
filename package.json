@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "REAL-TIME Chat API using Node.js, sequelize, and MySQL",
   "type": "module",
-  "main": "sever.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node sever.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Muhammad Shuja (Mshuja2040)",
