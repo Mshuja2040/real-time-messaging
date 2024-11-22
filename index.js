@@ -19,6 +19,8 @@ app.use(cors({ origin: process.env.NODE_ENV === "development" ? "*" : "your-prod
 // Routes
 app.use("/auth", authRoutes);
 app.use("/chat", chatRoutes);
+app.get("/", (req, res) => res.send('api is running'));
+
 
 // Initialize HTTP and Socket.IO
 const httpServer = createServer(app);
